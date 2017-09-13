@@ -1,5 +1,7 @@
 #!/bin/bash
-echo "Type Fahrenheit temperature to be converted to Celsius, then press enter"
+echo "Type Fahrenheit temperature to be converted to Celsius and Kelvin, then press enter"
 read Temp_F
 o=$(bc <<< "scale=3;($Temp_F-32)/1.8")
+p=$(bc <<< "scale=3;$o+273.15")
 echo "Temperature in degrees Celsius is $o"
+echo "Temperature in Kelvin is $p"
