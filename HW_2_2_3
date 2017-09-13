@@ -1,0 +1,24 @@
+#!/bin/bash
+a=$1
+n=$(find $a -maxdepth 0 -type f | wc -l)
+if [ $n == 0 ]
+then
+    echo "There is no file $a located in your current directory"
+else
+    b=$(echo $PWD)
+    cd 
+    g=$(find Trash -maxdepth 0 -type d | wc -l)
+    cd $b
+    if [ $g == 1 ]
+       then
+            mv $a /home/nrhines/Trash
+            echo "$a has been moved to the Trash folder"
+    else    
+        cd     
+        mkdir Trash
+        cd $b
+        mv $a /home/nrhines/Trash
+        echo "Trash folder created and $a has been moved"
+    fi
+
+fi
