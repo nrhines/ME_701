@@ -1,0 +1,11 @@
+#!/bin/bash
+a=$(find -maxdepth 1 -type f | wc -l)
+    # find locates all files in current directory
+    # wc -l counts lines
+echo "The number of files in this directory is $a"
+b=$(find -maxdepth 1 -type d | wc -l)
+    # find, type d locates all directories in current directory
+    # find, type d lists the current directory, so one needs to subtract 1 to get
+    # accurate count
+c=$((b-1))
+echo "The number of subdirectories in this directory is $c"
