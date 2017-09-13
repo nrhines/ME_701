@@ -2,4 +2,4 @@
 echo "Type Fahrenheit temperature to be converted to Celsius, then press enter"
 read Temp_F
 o=$(bc <<< "scale=3;($Temp_F-32)/1.8")
-echo "Temperature in degrees Celsius is $o
+echo "Temperature in degrees Celsius is $o"
